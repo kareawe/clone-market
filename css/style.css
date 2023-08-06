@@ -1,0 +1,56 @@
+:root {
+  --main-color: rgb(98, 220, 147);
+  --sub-color: rgb(100, 100, 100);
+}
+
+div {
+  width: 300px;
+  height: 100px;
+  border: 1px solid gray;
+  display: flex;
+  justify-content: center;
+}
+
+div:hover {
+  background-color: cornsilk;
+}
+
+div:hover img {
+  transform: scale(3) rotateX(360deg);
+}
+
+@keyframes moving-logo {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(3) rotateX(360deg);
+  }
+  40% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+  50% {
+    display: none;
+  }
+  55% {
+    display: block;
+  }
+  75% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+img {
+  width: 100px;
+  animation: moving-logo 3s infinite;
+}
+
+div {
+  transition: all 1s ease-in-out;
+}
